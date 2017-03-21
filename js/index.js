@@ -5,6 +5,7 @@ function Web() {
 	this.crearPestanas=crearPestanas;
 	this.cargarTipus=loadDoc("tipos",this.crearPestanas);
 
+/*
 	function loadDoc(variable, funcion) {
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
@@ -17,10 +18,29 @@ function Web() {
 		xhttp.open("GET", nombreArchivo, true);
 		xhttp.send();
 	}
+	*/
+	function loadDoc(variable, funcion) {
+		var nombre=this.nombre;
+		var nombreArchivo="php/proxy.php?url="+urlServidor+"&variable="+variable;
+                    $.ajax({
+                      async:false, 
+                      cache:false,
+                      dataType:"html", 
+                      type: 'POST',   
+                      url: nombreArchivo,
+                      data: "nombre="+nombre, 
+                      success:  function(respuesta){
+                          //console.log(respuesta);
+                          funcion(respuesta);
+                      },
+                      beforeSend:function(){},
+                      error:function(objXMLHttpRequest){}
+                    });
+	}
 	this.cargarTipus;
 	function crearPestanas(jsonText) {//el contenido de las pestañas seran los productos
 		var tipos = $.map(JSON.parse(jsonText), function(el) { return el });
-		
+
 		var ul=$("<ul>");
 		for (var i = 0; i < tipos.length; i++) {
 			var a=$("<a>").attr({href:"php/contenidoPestana.php?variable="+tipos[i]}).text(tipos[i]);

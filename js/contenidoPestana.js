@@ -1,31 +1,30 @@
 var divProductos=$("<div>").addClass("contenedorProductos");
 $("#tabs").append(divProductos);
 function ContenidoPestana(jsonText) {
-console.log("a");
 	$(".contenedorProductos").empty();
 	var productos=$.map(JSON.parse(jsonText), function(el) { return el });
 	for (var i = 0; i < productos.length; i++) {
 		new Producto(productos[i])
-		console.log(productos[i]);
+		
 	}
 }
 function Producto(p) {
-	this.tipo=p.tipus;
-	this.imagen=p.imatge;
-	this.nombre=p.nom;
-	this.descripcion=p.descripcio;
-	this.precio=p.preu;
-	this.ingredientes=p.ingredients;
-	this.vendidos=p.venuts;
+	console.log(p.VENUTS);
+	this.tipo=p.TIPUS;
+	this.imagen=p.IMATGES;
+	this.nombre=p.NOM;
+	this.descripcion=p.DESCRIPCIO;
+	this.precio=p.PREU;
+	this.ingredientes=p.INGREDIENTS;
+	this.vendidos=p.VENUTS;
 	this.crearDivProducto=crearDivProducto(this);
 	function crearDivProducto(producto) {
 		var divProducto=$("<div>").addClass("producto");
-		var pImagen=$("<img>").addClass("pImagen").attr("src",producto.imagen)
+		var pImagen=$("<img>").addClass("pImagen").attr("src",this.imagen)
 		var pNombre=$("<div>").addClass("pNombre").html(producto.nombre);
 		var pDescripcion=$("<div>").addClass("pDescripcion").html(producto.descripcion);
 		var pPrecio=$("<div>").addClass("pPrecio").html(producto.precio);
 		var btnAgregar=$('<button>').addClass("pAgregar").html("agregar").css({display:"none"});
-
 		divProducto.append(pNombre, pImagen, pDescripcion,pPrecio,btnAgregar);
 
 		divProducto.on("mouseover",function() {btnAgregar.css({display:"inline-block"});})//cuanto el raton está sobre el div
