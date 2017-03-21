@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Pizzas X</title>
+	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+	<script>
+		$( function() {
+			$( "#tabs" ).tabs({
+				beforeLoad: function( event, ui ) {
+					ui.jqXHR.fail(function() {
+						ui.panel.html(
+							"Couldn't load this tab. We'll try to fix this as soon as possible. " +
+							"If this wouldn't be a demo." );
+					});
+				}
+			});
+		} );
+	</script>
+	<header>
+		<div class="container">
+			<h1 style="background-color: red">LOGO, TITULO, LOGIN</h1>
+		</div>
+	</header>
+	<div class="container">
+		<section class="main row">
+			<aside class="col-md-2" style="background-color: blue">
+				TOP
+			</aside>
+			<article class="col-md-8 col-xs-9" style="background-color: green">
+				PRODUCTOS
+				<div id="tabs">
+					tabs
+				</div>
+			</article>
+			<aside class="col-md-2 col-xs-3" style="background-color: pink">
+				CESTA
+			</aside>
+		</section>
+	</div>
+	<footer>
+		<div class="container" style="background-color: skyblue">
+			Footer
+		</div>
+	</footer>
+</body>
+</html>
