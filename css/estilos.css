@@ -1,8 +1,17 @@
-
-/*Registro*/
+body{
+	background-color: red;
+}
+/*Registo*/
 .btn-registro{
     width: 100%;
 }
 .container-registro{
     width: 800px;
+}
+/*Login*/
+div.login{
+	width: 300px;
+}
+.btnLogin{
+	width: 100%;
 }
