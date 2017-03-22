@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="../css/estilos.css">
-</head>
-<body>
-	<form>
-		<table>
-			<tr>
-				<td class="tdLogin"><img id="userIco" src="../img/user.png"><input type="text" name="user" placeholder="Usuario"></td>
-			</tr>
-			<tr>
-				<td class="tdLogin"><img id="passIco" src="../img/pass.png"><input type="password" name="pass" placeholder="Contraseña"></td>
-			</tr>
-			<tr>
-				<td colspan="2"><button id="btnLogin" name="enviar">LOGIN</button></td>
-			</tr>
-		</table>
-	</form>
-</body>
-</html>
+<?php
+	include_once('model.php');
+	$connBd = new baseDatos('daw.institutmontilivi.cat','pizzeria', 'p1zz3r14','pizzeria');
+	$usuario = $_GET['usuario'];
+	$contrasena = $_GET['contrasena'];
+	$existeUsuario = $connBd->comprobarSiExisteUsuario($usuario, $contrasena);
+	if($existeUsuario)
+		echo "Bienvenido ".$usuario;
+	else
+		echo "Datos Incorrectos";
+?>

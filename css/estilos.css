@@ -1,35 +1,12 @@
-
-/*Login.php*/
-#userIco {
-    height: 18px;
-    margin-right: 10px;
-    margin-left: 5px;
-    margin-top: 2px;
+body{
+	background-color: red;
 }
+/*Registo*/
 
-#passIco {
-    height: 18px;
-    margin-right: 10px;
-    margin-left: 5px;
-    margin-top: 2px;
+/*Login*/
+div.login{
+	width: 300px;
 }
-
-.tdLogin input {
-
-    background-color: #fc0000;
-}
-
-.tdLogin input {
-    border-style: none;
-    background-color: #fc0000;
-}
-
-.tdLogin {
-    background-color: #fc0000;
-}
-
-
-#btnLogin {
-    width: 179px;
-    background-color: #1bb7fa;
+.btnLogin{
+	width: 100%;
 }
