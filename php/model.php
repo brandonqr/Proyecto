@@ -56,5 +56,18 @@ class baseDatos
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return (empty($result))?false:true;
 	}
+	function comprobarRegistroUsuario($usuari, $contrasena)
+	{
+		$stmt = $this->conn->prepare("SELECT usuari FROM `CLIENTS` WHERE usuari='$usuari' and ID_FRANQUICIA=36");
+		$stmt->execute();
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return (empty($result))?false:true;
+	}
+	function registrarUsuario($nom,$usr,$pass,$calle,$num,$ciu,$cp,$prov,$mail,$tlf){
+		$stmt = $this->conn->prepare("INSERT INTO 'CLIENTS'($nom,$usr,$pass,$calle,$num,$ciu,$cp,$prov,$mail,$tlf)");
+		$stmt->execute();
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		var_dump($result);
+	}
 }
 ?>
