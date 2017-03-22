@@ -8,7 +8,7 @@
 			$tipos = $connBd->retornarTipus();
 			echo json_encode($tipos);
 			break;
-		case 'vasVendidos':
+		case 'masVendidos':
 			$vendidos = $connBd->MasVendidos();
 			echo $vendidos;
 			break;

@@ -4,7 +4,9 @@ function Web() {
 	//that=this;
 	this.crearPestanas=crearPestanas;
 	this.cargarTipus=loadDoc("tipos",this.crearPestanas);
-
+	this.masVendidos=masVendidos;
+	this.cargarMasVendidos=loadDoc("masVendidos",this.masVendidos)
+	
 /*
 	function loadDoc(variable, funcion) {
 		var xhttp = new XMLHttpRequest();
@@ -22,22 +24,22 @@ function Web() {
 	function loadDoc(variable, funcion) {
 		var nombre=this.nombre;
 		var nombreArchivo="php/proxy.php?url="+urlServidor+"&variable="+variable;
-                    $.ajax({
-                      async:false, 
-                      cache:false,
-                      dataType:"html", 
-                      type: 'POST',   
-                      url: nombreArchivo,
-                      data: "nombre="+nombre, 
-                      success:  function(respuesta){
+		$.ajax({
+			async:false, 
+			cache:false,
+			dataType:"html", 
+			type: 'POST',   
+			url: nombreArchivo,
+			data: "nombre="+nombre, 
+			success:  function(respuesta){
                           //console.log(respuesta);
                           funcion(respuesta);
                       },
                       beforeSend:function(){},
                       error:function(objXMLHttpRequest){}
-                    });
+                  });
 	}
-	this.cargarTipus;
+	
 	function crearPestanas(jsonText) {//el contenido de las pestañas seran los productos
 		var tipos = $.map(JSON.parse(jsonText), function(el) { return el });
 
@@ -49,7 +51,22 @@ function Web() {
 		$("#tabs").append(ul);
 		
 	}
-
+	function masVendidos(jsonText) {
+		var contenedorProductosTop=$("#top")
+		$.getScript("js/contenidoPestana.js", function(){//cargar el script
+			var productos=JSON.parse(jsonText);
+			for (var i = 0; i < productos.length; i++){
+				new Producto(productos[i],contenedorProductosTop);
+			}
+			
+		});
+	}
+	this.cargarTipus;
+	this.masVendidos();
 }
-
 new Web();
+
+
+
+//crear Cesta
+
