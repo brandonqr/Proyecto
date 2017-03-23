@@ -29,7 +29,7 @@ class baseDatos
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 		$array = [];
 		foreach($result as $k => $v) { 
-			$array[$k] = $v["TIPUS"];
+			$array[$k] = utf8_encode($v["TIPUS"]);
 		}
 		return $array;
 	}
@@ -50,24 +50,24 @@ class baseDatos
 		 } 
 		
 		return json_encode($arrayProductosTipus);
-
-
-
-
-
-
-		/*
-
-
-
-		*/
 	}
 	function masVendidos(){
-
+		$arrayProductosMasVendidos= array();
 		$stmt = $this->conn->prepare("SELECT * from PRODUCTES ORDER by VENUTS desc limit 0,3");
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		return json_encode(utf8_encode($result));
+		foreach ($result as $row) {
+		 	array_push($arrayProductosMasVendidos,array(
+			"NOM"=>utf8_encode($row['NOM']),
+			"DESCRIPCIO"=>utf8_encode($row['DESCRIPCIO']),
+			"PREU"=>utf8_encode($row['PREU']),
+			"IMATGES"=>utf8_encode($row['IMATGES']),
+			"INGREDIENTS"=>utf8_encode($row['INGREDIENTS']),
+			"VENUTS"=>utf8_encode($row['VENUTS']),
+			"TIPUS"=>utf8_encode($row['TIPUS'])));
+		 } 
+		
+		return json_encode($arrayProductosMasVendidos);
 
 	}
 	function comprobarSiExisteUsuario($usuari, $contrasena)
