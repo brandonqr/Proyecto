@@ -16,7 +16,6 @@ class baseDatos
 		try{
 			$this->conn = new PDO("mysql:host=".$this->servidor.";dbname=".$this->nombreDB, $usuario,$passwd);
 			$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			
 		}
 		catch(PDOException $e){
 			echo "conn fail" . $e->getMessage();
@@ -51,7 +50,7 @@ class baseDatos
 	}
 	function comprobarSiExisteUsuario($usuari, $contrasena)
 	{
-		$stmt = $this->conn->prepare("SELECT usuari FROM `CLIENTS` WHERE usuari='$usuari' and contrasenya='$contrasena' and ID_FRANQUICIA=36");
+		$stmt = $this->conn->prepare("SELECT usuari FROM `CLIENTS` WHERE usuari='$usuari' and contrasenya='$contrasena' and ID_FRANQUICIA=2");
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return (empty($result))?false:true;

@@ -6,7 +6,21 @@ body{
 /*Login*/
 div.login{
 	width: 300px;
+	background-color: red;
+
 }
 .btnLogin{
 	width: 100%;
+}
+div.marginLogin{
+	margin-bottom: 5px;
+}
+button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
+    display: none;
+}
+.ui-dialog-titlebar-close {
+    display: none;
+}
+#dialog-form{
+	width: 50px;
 }
