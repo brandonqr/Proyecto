@@ -34,18 +34,40 @@ class baseDatos
 		return $array;
 	}
 	function retornarPorTipus($tipus){
-
+		$arrayProductosTipus= array();
 		$stmt = $this->conn->prepare("SELECT * FROM PRODUCTES WHERE PRODUCTES.TIPUS = '$tipus'");
 		$stmt->execute();
-		$result = $stmt->fetchAll(PDO::FETCH_ASSOC); 
-		return json_encode($result);
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		foreach ($result as $row) {
+		 	array_push($arrayProductosTipus,array(
+			"NOM"=>utf8_encode($row['NOM']),
+			"DESCRIPCIO"=>utf8_encode($row['DESCRIPCIO']),
+			"PREU"=>utf8_encode($row['PREU']),
+			"IMATGES"=>utf8_encode($row['IMATGES']),
+			"INGREDIENTS"=>utf8_encode($row['INGREDIENTS']),
+			"VENUTS"=>utf8_encode($row['VENUTS']),
+			"TIPUS"=>utf8_encode($row['TIPUS'])));
+		 } 
+		
+		return json_encode($arrayProductosTipus);
+
+
+
+
+
+
+		/*
+
+
+
+		*/
 	}
 	function masVendidos(){
 
 		$stmt = $this->conn->prepare("SELECT * from PRODUCTES ORDER by VENUTS desc limit 0,3");
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		return json_encode($result);
+		return json_encode(utf8_encode($result));
 
 	}
 	function comprobarSiExisteUsuario($usuari, $contrasena)
