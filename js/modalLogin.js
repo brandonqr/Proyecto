@@ -13,7 +13,7 @@ $( function() {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
-            console.log(usuario.val()+" "+usuario.val());
+            console.log(this.responseText);
             if(this.responseText!="")
             {
               valid=false;
@@ -30,8 +30,8 @@ return valid;
 
 dialog = $( "#dialog-form" ).dialog({
   autoOpen: false,
-  height: 2300,
-  width: 2300,
+  height: 400,
+  width: 400,
   modal: true,
   buttons: {
     "Login": loginUser,

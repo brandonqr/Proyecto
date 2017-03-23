@@ -101,8 +101,6 @@ class baseDatos
 			$dadesUsuario->idFranquicia)");
 
 		$stmt->execute();
-
-		# code...
 	}
 }
 ?>
