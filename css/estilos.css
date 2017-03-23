@@ -1,6 +1,3 @@
-body{
-	background-color: red;
-}
 /*Registo*/
 .btn-registro{
     width: 100%;
@@ -11,7 +8,6 @@ body{
 /*Login*/
 div.login{
 	width: 300px;
-	background-color: red;
 
 }
 .btnLogin{
@@ -27,5 +23,22 @@ button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-
     display: none;
 }
 #dialog-form{
-	width: 50px;
+	width: 200px;
+}
+/*Estilos nuevos*/
+.cestaImagen{
+    width:100px;
+    height: 100px;
+}
+.logoHeader{
+    background-color: #0f0
+}
+.nameHeader{
+    background-color: #f00;
+}
+.loginHeader{
+    background-color: #00f;
+}
+.inln-block{
+    display: inline-block;
 }
