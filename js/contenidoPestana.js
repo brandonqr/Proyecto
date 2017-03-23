@@ -21,7 +21,7 @@ function Producto(p,contenedor) {
 	this.separarProductosPorTipo=separarProductosPorTipo;
 	function crearDivProducto(producto) {
 		var divProducto=$("<div>").addClass("producto");
-		var pImagen=$("<img>").addClass("pImagen").attr("src","img/bacon.jpg")
+		var pImagen=$("<img>").addClass("pImagen").attr("src", producto.imagen);
 		var pNombre=$("<div>").addClass("pNombre").html(producto.nombre);
 		var pDescripcion=$("<div>").addClass("pDescripcion").html(producto.descripcion);
 		var pPrecio=$("<div>").addClass("pPrecio").html(producto.precio);
