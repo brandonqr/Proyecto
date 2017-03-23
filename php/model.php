@@ -50,10 +50,37 @@ class baseDatos
 	}
 	function comprobarSiExisteUsuario($usuari, $contrasena)
 	{
-		$stmt = $this->conn->prepare("SELECT usuari FROM `CLIENTS` WHERE usuari='$usuari' and contrasenya='$contrasena' and ID_FRANQUICIA=2");
+		$stmt = $this->conn->prepare("SELECT usuari FROM `CLIENTS` WHERE usuari='$usuari' and contrasenya='$contrasena' and ID_FRANQUICIA=1");
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return (empty($result))?false:true;
+	}
+	function puedeRegistrarse($usuari)
+	{
+		$stmt = $this->conn->prepare("SELECT usuari FROM `CLIENTS` WHERE usuari='$usuari'and ID_FRANQUICIA=1");
+		$stmt->execute();
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return (empty($result))?true:false;
+	}
+	function registrarUsuario($dadesUsuario)
+	{
+		echo "<pre>".var_dump($dadesUsuario)."</pre>";
+		$stmt = $this->conn->prepare("INSERT INTO CLIENTS(`ID`, `NOM_COMPLET`, `USUARI`, `CONTRASENYA`, `CARRER`, `NUMERO`, `CIUTAT`, `CP`, `PROVINCIA`, `EMAIL`, `TELEFON`, `ID_FRANQUICIA`) VALUES (NULL,
+			'$dadesUsuario->nom',
+			'$dadesUsuario->usr',
+			'$dadesUsuario->pass',
+			'$dadesUsuario->calle',
+			'$dadesUsuario->num',
+			'$dadesUsuario->ciu',
+			'$dadesUsuario->cp',
+			'$dadesUsuario->prov',
+			'$dadesUsuario->mail',
+			'$dadesUsuario->tlf',
+			$dadesUsuario->idFranquicia)");
+
+		$stmt->execute();
+
+		# code...
 	}
 }
 ?>
