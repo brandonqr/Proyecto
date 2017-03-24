@@ -52,10 +52,13 @@ function Web() {
 		
 	}
 	function masVendidos(jsonText) {
-		var contenedorProductosTop=$("#top")
+		var contenedorProductosTop=$("#top");
 			var productos=JSON.parse(jsonText);
 			for (var i = 0; i < productos.length; i++){
-				new Producto(productos[i],contenedorProductosTop);
+				var p=productos[i];
+				console.log(p.DESCRIPCIO);
+				p.DESCRIPCIO="";
+				new Producto(p,contenedorProductosTop);
 			}
 	}
 	this.cargarTipus;

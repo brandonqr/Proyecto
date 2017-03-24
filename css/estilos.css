@@ -47,37 +47,34 @@ button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-
 
 }
 .loginHeader{
-
+    text-align: right;
     height: 100px;
 
 }
 .inln-block{
     display: inline-block;
 }
-.pimagen{
-    width:600px;
-    height: 100px;
-}
-#loginUser{
-    margin-left auto;
-    background-color: red;
-}
+
+
+
 /*Productos*/
 .producto{
     position: relative;
     display: inline-block;
+    width: 240px;
+    height: 260px;
 }
 .producto:hover{
     position: relative;
     display: inline-block;
 }
 .pImagen{
-    width: 240px;
-    margin: 10px;
+    width: 100%;
+    height:100%;
 }
 .pNombre{
     position: absolute;
-    bottom:55px;
+    bottom:35px;
     left: 15px;
     padding: 5px;
     font-weight:bold;
@@ -91,7 +88,53 @@ button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-
 }
 .pAgregar{
     position: absolute;
-    bottom: 50px;
-    right: 15px;
-    margin:10px;
+    top: 4px;
+    right: 10px;
+    margin:0px;
+}
+.pDescripcion{
+    color: white;
+    position: absolute;
+    left: 0px;
+    top: 20px;
+    margin:20px;
+    background-color: black;
+    opacity: 0.8;
+    padding: 5px;
+}
+/*Mas vendidos*/
+#top .producto .pNombre{
+    color:white;
+    background-color:rgba(47, 47, 47, 0.7);
+    bottom:10px;
+}
+#top .producto{
+    height: 150px;
+    width: 150px;
+}
+#top .producto .pDescripcion{
+    display: none;
+
+
+}
+#top .producto .pDescripcion{
+    display: none;
+    
+}
+/*Contenido tabs*/
+/* div contenedor*/
+div.col-md-9.ui-tabs.ui-corner-all.ui-widget.ui-widget-content{
+    border-style: none;
+}
+/*header*/
+ul.ui-tabs-nav.ui-corner-all.ui-helper-reset.ui-helper-clearfix.ui-widget-header {
+    background-color: inherit;
+    border-style: none;
+    margin:auto;
+}
+a.ui-tabs-anchor {
+    border-style: none;
+}
+ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active{
+    border-style: none;
 }

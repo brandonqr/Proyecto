@@ -12,7 +12,7 @@ function Producto(p,contenedor) {
 	this.tipo=p.TIPUS;
 	this.imagen=p.IMATGES;
 	this.nombre=p.NOM;
-	this.descripcion=p.DESCRIPCIO;
+	this.descripcion=p.DESCRIPCIO.substr(0,80);
 	this.precio=p.PREU;
 	this.ingredientes=p.INGREDIENTS;
 	this.vendidos=p.VENUTS;
@@ -20,24 +20,28 @@ function Producto(p,contenedor) {
 	this.mostrarProductosCesta=mostrarProductosCesta;
 	this.separarProductosPorTipo=separarProductosPorTipo;
 	function crearDivProducto(producto) {
-		var divProducto=$("<div>").addClass("producto");
+		var divProducto=$("<div>").addClass("producto").attr("id",producto.nombre);
 		var pImagen=$("<img>").addClass("pImagen").attr({src: producto.imagen,id:producto.nombre});
 		var pNombre=$("<div>").addClass("pNombre").html(producto.nombre);
-		var pDescripcion=$("<div>").addClass("pDescripcion").html(producto.descripcion);
+		var pDescripcion=$("<div>").addClass("pDescripcion").html(producto.descripcion).css({display:"none"});
 		var pPrecio=$("<div>").addClass("pPrecio").html(producto.precio);
 		var btnAgregar=$('<button>').addClass("pAgregar btn-danger").html("agregar").css({display:"none"});
 		divProducto.append(pNombre, pImagen, pDescripcion,pPrecio,btnAgregar);
 
 		divProducto.on("mouseover",function() {
 			btnAgregar.css({display:"inline-block"});
+			if(producto.descripcion!="")
+				pDescripcion.css({display:"inline-block"});
+
 			})//cuanto el raton está sobre el div
 
 		divProducto.on("mouseout",function() {
 			btnAgregar.css({display:"none"});
-			pImagen.css("opacity","1");
+			pDescripcion.css({display:"none"});
 			})//cuanto el raton deja de estar sobre el div
 
-		btnAgregar.click(function() {//este click agrega a la cesta
+		
+			btnAgregar.click(function() {//este click agrega a la cesta
 			arrayProductos.push(producto);
 			separarProductosPorTipo();
 			$('#contadorCesta').html(arrayProductos.length)
