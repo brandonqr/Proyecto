@@ -47,7 +47,7 @@ button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-
 
 }
 .loginHeader{
-    
+
     height: 100px;
 
 }
@@ -62,4 +62,36 @@ button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-
     margin-left auto;
     background-color: red;
 }
-
+/*Productos*/
+.producto{
+    position: relative;
+    display: inline-block;
+}
+.producto:hover{
+    position: relative;
+    display: inline-block;
+}
+.pImagen{
+    width: 240px;
+    margin: 10px;
+}
+.pNombre{
+    position: absolute;
+    bottom:55px;
+    left: 15px;
+    padding: 5px;
+    font-weight:bold;
+    font-style:oblique;
+    color:#FFFFFF;
+    background-color:rgba(0, 0, 0, 0.9);
+    word-spacing:2pt;
+    font-size:12px;
+    text-align:left;
+    font-family:arial, helvetica, sans-serif;line-height:2;
+}
+.pAgregar{
+    position: absolute;
+    bottom: 50px;
+    right: 15px;
+    margin:10px;
+}

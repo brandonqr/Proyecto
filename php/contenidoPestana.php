@@ -1,12 +1,13 @@
 <?php
-	include_once('model.php');
-	$connBd = new baseDatos('daw.institutmontilivi.cat','pizzeria', 'p1zz3r14','pizzeria');
-	$value = $connBd->retornarTipus();
-	$variable=$_GET['variable'];
+include_once('model.php');
+	//$connBd = new baseDatos('daw.institutmontilivi.cat','pizzeria', 'p1zz3r14','pizzeria');
+$connBd = new baseDatos('localhost','root', 'root','pizzeria');
+$value = $connBd->retornarTipus();
+$variable=$_GET['variable'];
 
-	if (in_array($variable, $value)) {
-		$jsonText = $connBd->retornarPorTipus($variable);
-	}
+if (in_array($variable, $value)) {
+	$jsonText = $connBd->retornarPorTipus($variable);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

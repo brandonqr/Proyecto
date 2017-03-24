@@ -53,13 +53,10 @@ function Web() {
 	}
 	function masVendidos(jsonText) {
 		var contenedorProductosTop=$("#top")
-		$.getScript("js/contenidoPestana.js", function(){//cargar el script
 			var productos=JSON.parse(jsonText);
 			for (var i = 0; i < productos.length; i++){
 				new Producto(productos[i],contenedorProductosTop);
 			}
-			
-		});
 	}
 	this.cargarTipus;
 	this.masVendidos();
