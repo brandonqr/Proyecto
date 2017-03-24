@@ -32,7 +32,7 @@ button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-
 }
 .logoHeader{
     background-image: url("../img/chicote.png");
-    background-size: 100%; 
+    background-size:cover; 
     height: 100px;
 }
 .nameHeader{
@@ -44,12 +44,10 @@ button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-
     text-align: center;
     color:red;
     text-shadow:4px 4px 5px #000;
-
 }
 .loginHeader{
-
     height: 100px;
-
+    text-align: right;
 }
 .inln-block{
     display: inline-block;
@@ -58,10 +56,13 @@ button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-
     width:600px;
     height: 100px;
 }
-#loginUser{
-    margin-left auto;
-    background-color: red;
+.mrgn-top-20{
+    margin-top: 20px;
 }
+#loginUser{
+    width:78px;
+}
+
 /*Productos*/
 .producto{
     position: relative;
