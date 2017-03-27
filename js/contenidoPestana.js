@@ -24,7 +24,7 @@ function Producto(p,contenedor) {
 		var pImagen=$("<img>").addClass("pImagen").attr({src: producto.imagen,id:producto.nombre});
 		var pNombre=$("<div>").addClass("pNombre").html(producto.nombre);
 		var pDescripcion=$("<div>").addClass("pDescripcion").html(producto.descripcion).css({display:"none"});
-		var pPrecio=$("<div>").addClass("pPrecio").html(producto.precio);
+		var pPrecio=$("<div>").addClass("pPrecio ocultarPrecio").html(producto.precio+" €");
 		var btnAgregar=$('<button>').addClass("pAgregar btn-danger").html("agregar").css({display:"none"});
 		divProducto.append(pNombre, pImagen, pDescripcion,pPrecio,btnAgregar);
 

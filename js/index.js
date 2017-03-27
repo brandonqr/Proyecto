@@ -13,7 +13,6 @@ function Web() {
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				funcion(this.responseText);
-
 			}
 		};
 		var nombreArchivo="php/proxy.php?url="+urlServidor+"&variable="+variable;

@@ -72,7 +72,7 @@ class baseDatos
 	}
 	function comprobarSiExisteUsuario($usuari, $contrasena)
 	{
-		$stmt = $this->conn->prepare("SELECT usuari FROM `CLIENTS` WHERE usuari='$usuari' and contrasenya='$contrasena' and ID_FRANQUICIA=1");
+		$stmt = $this->conn->prepare("SELECT usuari FROM `CLIENTS` WHERE usuari='$usuari' and contrasenya='$contrasena' and ID_FRANQUICIA=2");
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return (empty($result))?false:true;

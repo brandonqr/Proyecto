@@ -8,6 +8,15 @@
 
 
 /*Productos*/
+.pPrecio{
+    position: absolute;
+    background-color: red;
+    bottom:40px;
+    right: 20px;
+}
+.ocultarPrecio{
+    display: none;
+}
 .producto{
     position: relative;
     display: inline-block;
