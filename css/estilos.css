@@ -146,3 +146,12 @@ button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-
     display: inline-block;
 }
 
+#dialog-form {
+    background-color: red;
+    padding: 30px 0px 30px 30px;
+    text-align: center;
+}
+.ui-dialog-buttonset{
+    background-color: red;
+    text-align: center;
+}
