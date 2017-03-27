@@ -5,56 +5,6 @@
 .container-registro{
     width: 1200px;
 }
-/*Login*/
-div.login{
-	width: 300px;
-
-}
-.btnLogin{
-	width: 100%;
-}
-div.marginLogin{
-	margin-bottom: 5px;
-}
-button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
-    display: none;
-}
-.ui-dialog-titlebar-close {
-    display: none;
-}
-#dialog-form{
-	width: 200px;
-}
-/*Estilos nuevos*/
-.cestaImagen{
-    width:100px;
-    height: 100px;
-}
-.logoHeader{
-    background-image: url("../img/chicote.png");
-    background-size: 100%; 
-    height: 100px;
-}
-.nameHeader{
-    height: 100px;
-}
-.nameHeader h1{
-    font-family: 'Fascinate Inline', cursive;
-    font-size: 60px;
-    text-align: center;
-    color:red;
-    text-shadow:4px 4px 5px #000;
-
-}
-.loginHeader{
-    text-align: right;
-    height: 100px;
-
-}
-.inln-block{
-    display: inline-block;
-}
-
 
 
 /*Productos*/
@@ -138,3 +88,61 @@ a.ui-tabs-anchor {
 ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active{
     border-style: none;
 }
+
+/*Login*/
+div.login{
+    width: 100%;
+
+}
+.form-horizontal .form-group {
+    margin-right: -30px;
+    margin-left: 18px;
+}
+.form-horizontal.login{
+    width: 200px;
+}
+#loginContrasena{
+width: 100%;
+}
+.btnLogin{
+    width: 100%;
+}
+div.marginLogin{
+    margin-bottom: 5px;
+}
+button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
+    display: none;
+}
+.ui-dialog-titlebar-close {
+    display: none;
+}
+/*Estilos nuevos*/
+.cestaImagen{
+    width:100px;
+    height: 100px;
+}
+.logoHeader{
+    background-image: url("../img/chicote.png");
+    background-size: 100%; 
+    height: 100px;
+}
+.nameHeader{
+    height: 100px;
+}
+.nameHeader h1{
+    font-family: 'Fascinate Inline', cursive;
+    font-size: 60px;
+    text-align: center;
+    color:red;
+    text-shadow:4px 4px 5px #000;
+
+}
+.loginHeader{
+    text-align: right;
+    height: 100px;
+
+}
+.inln-block{
+    display: inline-block;
+}
+

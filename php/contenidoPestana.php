@@ -1,7 +1,7 @@
 <?php
 include_once('model.php');
-	$connBd = new baseDatos('daw.institutmontilivi.cat','pizzeria', 'p1zz3r14','pizzeria');
-//$connBd = new baseDatos('localhost','root', 'root','pizzeria');
+	//$connBd = new baseDatos('daw.institutmontilivi.cat','pizzeria', 'p1zz3r14','pizzeria');
+$connBd = new baseDatos('localhost','root', 'root','pizzeria');
 $value = $connBd->retornarTipus();
 $variable=$_GET['variable'];
 
@@ -19,7 +19,7 @@ if (in_array($variable, $value)) {
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/contenidoPestana.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 </head>
 <body>
 	<script type="text/javascript">

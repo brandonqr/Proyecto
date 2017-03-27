@@ -30,8 +30,6 @@ return valid;
 
 dialog = $( "#dialog-form" ).dialog({
   autoOpen: false,
-  height: 400,
-  width: 400,
   modal: true,
   buttons: {
     "Login": loginUser,

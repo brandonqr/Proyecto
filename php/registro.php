@@ -1,8 +1,8 @@
 <?php
 	$idFranquicia=1;
 	require_once('model.php');
-	$connBd = new baseDatos('daw.institutmontilivi.cat','pizzeria', 'p1zz3r14','pizzeria');
-	//$connBd = new baseDatos('localhost','root', 'root','pizzeria');
+	//$connBd = new baseDatos('daw.institutmontilivi.cat','pizzeria', 'p1zz3r14','pizzeria');
+	$connBd = new baseDatos('localhost','root', 'root','pizzeria');
 	$usuario=$_GET['usuario'];
 	$dadesClient =(object)[
 	'nom' => $_GET['nombre'],
