@@ -5,82 +5,92 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../css/estilos.css">
-<<<<<<< HEAD
+	<link href="https://fonts.googleapis.com/css?family=Fascinate+Inline" rel="stylesheet">
+
 	<script type="text/javascript" src="../js/jquery-3.1.1.js"></script>
 	<script type="text/javascript" src="../js/jquery-ui.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.js"></script>
 	<script type="text/javascript" src="../js/index.js"></script>
-=======
->>>>>>> 80ff465d9fecd121658295f7c6e13aeb6d610368
+
 </head>
 <body>
 	<header>
 		<div class="container">
-			<h1 style="background-color: red">LOGO, TITULO, LOGIN</h1>
+			<div class="row header margin-bot-30">
+				<div class="logoHeader inln-block col-sm-3 color-top">
+				</div>
+				<div class="nameHeader inln-block col-sm-6 color-top">
+					<a class="goInici" href="../index.html"><h1>Pizzeria X</h1></a>
+				</div>
+				<div class="col-sm-3 color-top loginHeader"></div>
+			</div>
 		</div>
 	</header>
 	<div class="container container-registro">
 		<form class="form-horizontal" action="../php/registro.php">
 			<div class="form-group">
-				<div class="col-sm-10">
+				<div class="col-sm-10 col-sm-offset-1">
 					<input type="text" class="form-control" name="nombre" placeholder="Nombre">
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-sm-10"> 
+				<div class="col-sm-10 col-sm-offset-1"> 
 					<input type="text" class="form-control" name="usuario" placeholder="Usuario">
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-sm-10"> 
+				<div class="col-sm-10 col-sm-offset-1"> 
 					<input type="password" class="form-control" id="contrasenaRegistro" name="passwd" placeholder="Contraseña">
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-sm-10"> 
+				<div class="col-sm-10 col-sm-offset-1"> 
 					<input type="text" class="form-control" name="calle" placeholder="Calle" onfocus="contrasenas">
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-sm-10"> 
+				<div class="col-sm-10 col-sm-offset-1"> 
 					<input type="text" class="form-control" name="numero" placeholder="Numero">
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-sm-10"> 
+				<div class="col-sm-10 col-sm-offset-1"> 
 					<input type="text" class="form-control" name="ciudad" placeholder="Ciudad">
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-sm-10"> 
+				<div class="col-sm-10 col-sm-offset-1"> 
 					<input type="text" class="form-control" name="cp" placeholder="Codigo Postal">
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-sm-10"> 
+				<div class="col-sm-10 col-sm-offset-1"> 
 					<input type="text" class="form-control" name="provincia" placeholder="Provincia">
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-sm-10"> 
+				<div class="col-sm-10 col-sm-offset-1"> 
 					<input type="email" class="form-control" name="email" placeholder="Email">
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-sm-10"> 
+				<div class="col-sm-10 col-sm-offset-1"> 
 					<input type="password" class="form-control" name="telefono" placeholder="Telefono">
 				</div>
 			</div>
 			<div class="form-group"> 
-				<div class="col-sm-10">
+				<div class="col-sm-10 col-sm-offset-1">
 					<button type="submit" onclick="registro()" class="btn btn-default btn-registro">Submit</button>
 				</div>
 			</div>
 		</form>
 	</div>
 	<footer>
-		<div class="container" style="background-color: skyblue">
-			Footer
+		<div class="container" id="footer">
+			<p>
+				Brandon Quiroz, Marc Xargay<br>
+				2017 · Girona
+			</p>
 		</div>
 	</footer>
 </body>

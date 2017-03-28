@@ -227,3 +227,9 @@ body{
 .descripcionProductoCesta{
     display: none;
 }
+.margin-bot-30{
+    margin-bottom: 30px;
+}
+.goInici:hover,selected{
+    text-decoration:none;
+}
