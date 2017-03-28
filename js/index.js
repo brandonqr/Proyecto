@@ -1,5 +1,10 @@
 var urlServidor="http://localhost/Proyecto/php/index.php";
 var arrayProductos=[];
+$(function() { 
+	console.log("a");
+	console.log(document.cookie);
+
+ });
 function Web() {
 	//that=this;
 	this.crearPestanas=crearPestanas;

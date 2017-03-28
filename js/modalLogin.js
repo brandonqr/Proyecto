@@ -27,6 +27,8 @@ $( function() {
        };
        xhttp.open("GET", url+"?usuario="+usuario.val()+"&contrasena="+contrasena.val(), true);
        xhttp.send();
+        console.log("a");
+       console.log(document.cookie);
 return valid;
 }
 
