@@ -1,7 +1,7 @@
 <?php
 include_once('model.php');
-	//$connBd = new baseDatos('daw.institutmontilivi.cat','pizzeria', 'p1zz3r14','pizzeria');
-$connBd = new baseDatos('localhost','root', 'root','pizzeria');
+$connBd = new baseDatos('daw.institutmontilivi.cat','pizzeria', 'p1zz3r14','pizzeria');
+//$connBd = new baseDatos('localhost','root', 'root','pizzeria');
 $value = $connBd->retornarTipus();
 $variable=$_GET['variable'];
 

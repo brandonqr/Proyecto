@@ -4,7 +4,7 @@
 }
 .container-registro{
     width: 1200px;
-}
+} 
 
 
 /*Productos*/
@@ -131,7 +131,7 @@ button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-
     height: 100px;
 }
 .logoHeader{
-    background-image: url("../img/chicote.png");
+    
     background-size: 100%; 
     height: 100px;
 }
@@ -142,7 +142,7 @@ button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-
     font-family: 'Fascinate Inline', cursive;
     font-size: 60px;
     text-align: center;
-    color:red;
+    color:#b52727;
     text-shadow:4px 4px 5px #000;
 
 }
@@ -156,11 +156,74 @@ button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-
 }
 
 #dialog-form {
-    background-color: red;
+    background-color: #e8e8e8;
     padding: 30px 0px 30px 30px;
     text-align: center;
+    border-radius: 10px 10px 0px 0px;
 }
 .ui-dialog-buttonset{
-    background-color: red;
+    background-color: #e8e8e8;
     text-align: center;
+    border-radius:0px 0px 10px 10px ;
+    padding-bottom: 10px;
+}
+}/*Menu*/
+#tabs ul{
+    list-style-type: none; 
+    margin: 0px;
+    text-align: center;
+    background-color: red;
+}
+#tabs ul li{
+    display: inline-block;
+    background-color: #b52727;
+    width: 20%;
+    margin: 2px;
+    text-align: center;
+    border-radius: 3px;
+    text-transform: uppercase;
+    border: 2px solid black;
+    
+}
+#tabs ul li a{
+    text-decoration:none;
+    color:#fff;
+    text-shadow:2px 2px 2px #000;
+}
+#tabs ul li a:hover,selected{
+    text-decoration:none;
+    color:#fff;
+    text-shadow:2px 2px 2px #000;
+}
+#tabs{
+    text-align: center;
+    min-height: 500px;
+}
+body{
+    background-color: #e2e2e2 !important;
+}
+#textoOBoton{
+    margin-top:30px;
+}
+.color-top{
+    background-color: #303030;
+}
+#top h4{
+    color:#b52727;
+}
+#footer p{
+    font-weight: bold;
+
+}
+#footer{
+    background-color: #6b6b6b;
+    text-align: center;
+}
+/*Cesta*/
+.imagenProductoCesta{
+    width: 10px;
+    height: 10px;
+}
+.descripcionProductoCesta{
+    display: none;
 }
