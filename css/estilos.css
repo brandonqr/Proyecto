@@ -233,3 +233,19 @@ body{
 .goInici:hover,selected{
     text-decoration:none;
 }
+/*Cesta Lateral*/
+.contenedorProducto{
+    border: solid 1px red;
+}
+.imagenProductoCesta{
+    float: left;
+    height: 40px;
+    width: 15%;
+}
+.precioProductoCesta{
+    display: inline-block;
+    margin-right: 10px;
+}
+.cantidadProductoCesta{
+    display: inline-block;
+}
