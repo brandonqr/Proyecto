@@ -1,11 +1,21 @@
 var urlServidor="http://localhost/Proyecto/php/index.php";
 var arrayProductos=[];
-$(function() { 
-	console.log("a");
-	console.log(document.cookie);
+$(function() { //verificar si existe cookie por ajax
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			if(this.responseText!=""){
+				$("#loginUser")[0].style.display="none";
+				$("#textoOBoton").html(this.responseText);
+				$(".pPrecio").removeClass("ocultarPrecio");			}
 
- });
-function Web() {
+			}
+		};
+		var nombreArchivo="http://localhost/Proyecto/php/existeCookie.php";
+		xhttp.open("GET", nombreArchivo, true);
+		xhttp.send();
+	});
+	function Web() {
 	//that=this;
 	this.crearPestanas=crearPestanas;
 	this.cargarTipus=loadDoc("tipos",this.crearPestanas);
@@ -57,20 +67,17 @@ function Web() {
 	}
 	function masVendidos(jsonText) {
 		var contenedorProductosTop=$("#top");
-			var productos=JSON.parse(jsonText);
-			for (var i = 0; i < productos.length; i++){
-				var p=productos[i];
-				console.log(p.DESCRIPCIO);
-				p.DESCRIPCIO="";
-				new Producto(p,contenedorProductosTop);
-			}
+		var productos=JSON.parse(jsonText);
+		for (var i = 0; i < productos.length; i++){
+			var p=productos[i];
+			console.log(p.DESCRIPCIO);
+			p.DESCRIPCIO="";
+			new Producto(p,contenedorProductosTop);
+		}
 	}
 	this.cargarTipus;
 	this.masVendidos();
 }
 new Web();
 
-
-
-//crear Cesta
-
+//$("#contrasenaRegistro").value

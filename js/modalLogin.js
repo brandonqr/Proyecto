@@ -20,7 +20,6 @@ $( function() {
               dialog.dialog( "close" );
               $("#loginUser")[0].style.display="none";
               $("#textoOBoton").html(usuario.val());
-              $("#textoOBoton").addClass("logeado")
               $(".pPrecio").removeClass("ocultarPrecio");
             }
          }
