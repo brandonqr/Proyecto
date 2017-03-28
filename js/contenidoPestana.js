@@ -68,17 +68,20 @@ function Producto(p,contenedor) {
 	}
 	function mostrarProductosCesta() {
 		$("#contenidoCesta").empty();
+		
 		for (var i = 0; i < TiposProducto.length; i++) {
+			var divContenedorProducto=$("<DIV>").addClass("contenedorProducto");
 			var producto=arrayProductosPorTipo[TiposProducto[i]][0];//coger el primer producto del array
-			console.log(producto);
 			var cantidadPorProducto=arrayProductosPorTipo[TiposProducto[i]].length;
 			var imagenProductoCesta=$("<img>").addClass("imagenProductoCesta").attr("src",producto.imagen);
 			var nombreProductoCesta=$("<div>").addClass("nombreProductoCesta").html(producto.nombre);
 			var descripcionProductoCesta=$("<div>").addClass("descripcionProductoCesta").html(producto.descripcion);
-			var precioProductoCesta=$("<div>").addClass("precioProductoCesta").html(producto.precio);
-			var cantidadProductoCesta=$("<div>").addClass("cantidadProductoCesta").html(cantidadPorProducto);
-			$("#contenidoCesta").append(imagenProductoCesta,nombreProductoCesta,descripcionProductoCesta,precioProductoCesta,cantidadPorProducto);
+			var precioProductoCesta=$("<div>").addClass("precioProductoCesta").html(producto.precio+"€ ");
+			var cantidadProductoCesta=$("<div>").addClass("cantidadProductoCesta").html(" x "+cantidadPorProducto+" unidades");
+			divContenedorProducto.append(imagenProductoCesta,nombreProductoCesta,descripcionProductoCesta,precioProductoCesta,cantidadProductoCesta);
+			$("#contenidoCesta").append(divContenedorProducto);
 		}
+		
 		//$("#cesta").append(divMostrarProductos);
 	}
 	this.crearDivProducto;
