@@ -1,4 +1,5 @@
 var divProductos=$("<div>").addClass("contenedorProductos");
+var totalFactura=0;
 $("#tabs").append(divProductos);
 var tiposProducto=[];
 function ContenidoPestana(jsonText) {
@@ -20,6 +21,7 @@ function Producto(p,contenedor) {
 	this.mostrarProductosCesta=mostrarProductosCesta;
 	this.separarProductosPorTipo=separarProductosPorTipo;
 	function crearDivProducto(producto) {
+
 		var divProducto=$("<div>").addClass("producto").attr("id",producto.nombre);
 		var pImagen=$("<img>").addClass("pImagen").attr({src: producto.imagen,id:producto.nombre});
 		var pNombre=$("<div>").addClass("pNombre").html(producto.nombre);
@@ -40,11 +42,11 @@ function Producto(p,contenedor) {
 			pDescripcion.css({display:"none"});
 			})//cuanto el raton deja de estar sobre el div
 
-		
 			btnAgregar.click(function() {//este click agrega a la cesta
-			arrayProductos.push(producto);
-			separarProductosPorTipo();
-			$('#contadorCesta').html(arrayProductos.length)
+				arrayProductos.push(producto);
+				separarProductosPorTipo();
+				totalFactura+=parseInt(producto.precio)
+				$("#totalFactura").html("Total: "+ totalFactura + "€");
 		})
 		$(contenedor).append(divProducto);
 	}
@@ -65,7 +67,7 @@ function Producto(p,contenedor) {
 		mostrarProductosCesta();
 	}
 	function mostrarProductosCesta() {
-		$("#cesta").empty();
+		$("#contenidoCesta").empty();
 		for (var i = 0; i < TiposProducto.length; i++) {
 			var producto=arrayProductosPorTipo[TiposProducto[i]][0];//coger el primer producto del array
 			console.log(producto);
@@ -75,7 +77,7 @@ function Producto(p,contenedor) {
 			var descripcionProductoCesta=$("<div>").addClass("descripcionProductoCesta").html(producto.descripcion);
 			var precioProductoCesta=$("<div>").addClass("precioProductoCesta").html(producto.precio);
 			var cantidadProductoCesta=$("<div>").addClass("cantidadProductoCesta").html(cantidadPorProducto);
-			$("#cesta").append(imagenProductoCesta,nombreProductoCesta,descripcionProductoCesta,precioProductoCesta,cantidadPorProducto);
+			$("#contenidoCesta").append(imagenProductoCesta,nombreProductoCesta,descripcionProductoCesta,precioProductoCesta,cantidadPorProducto);
 		}
 		//$("#cesta").append(divMostrarProductos);
 	}
